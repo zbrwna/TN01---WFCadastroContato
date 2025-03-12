@@ -168,6 +168,7 @@
             mkdTelefone.Name = "mkdTelefone";
             mkdTelefone.Size = new Size(100, 23);
             mkdTelefone.TabIndex = 9;
+            mkdTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtEmail
             // 
