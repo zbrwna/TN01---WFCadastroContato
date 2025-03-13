@@ -17,6 +17,12 @@ namespace TN01___WFCadastroContato
             InitializeComponent();
         }
 
+        public void Sucesso(string mensagem = "")
+        {
+            MessageBox.Show(mensagem, "Sucesso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void LimparFormulario()
         {
             txtNome.Clear();
@@ -35,6 +41,7 @@ namespace TN01___WFCadastroContato
             string sobrenome = txtSobrenome.Text;
             string email = txtEmail.Text;
             string telefone = mkdTelefone.Text;
+            string tipotelefone = gbxTipoTelefone.Text;
 
             if (nome.Length == 0)
             {
@@ -61,24 +68,31 @@ namespace TN01___WFCadastroContato
 
             if (rdbPessoal.Checked)
             {
-                telefone = "P";
+               tipotelefone = "Pessoal";
             }
             else if (rdbComercial.Checked)
             {
-                telefone = "C";
+                tipotelefone = "Comercial";
             }
             else if (rdbRecado.Checked)
             {
-                telefone = "R";
+                tipotelefone = "Recado";
             }
             else
             {
                 MessageBox.Show("O tipo de telefone não foi informado","Erro");
                 return;
             }
+ 
+            string mensagem = $@"
+                Nome: {txtNome.Text} {txtSobrenome.Text}
+                Tipo Telefone: {tipotelefone}
+                DDD/Telefone: {telefone}
+                E-mail: {txtEmail.Text}    ";
 
+            Sucesso(mensagem);
 
-
+         
         }
     }
 }

@@ -45,8 +45,8 @@
             btnVoltar = new Button();
             btnSalvar = new Button();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            lblLinha = new Label();
+            lblLinha2 = new Label();
             gbxTipoTelefone.SuspendLayout();
             SuspendLayout();
             // 
@@ -168,7 +168,6 @@
             mkdTelefone.Name = "mkdTelefone";
             mkdTelefone.Size = new Size(100, 23);
             mkdTelefone.TabIndex = 9;
-            mkdTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtEmail
             // 
@@ -208,29 +207,29 @@
             label2.Size = new Size(0, 15);
             label2.TabIndex = 13;
             // 
-            // label3
+            // lblLinha
             // 
-            label3.BorderStyle = BorderStyle.Fixed3D;
-            label3.Location = new Point(24, 96);
-            label3.Name = "label3";
-            label3.Size = new Size(400, 1);
-            label3.TabIndex = 14;
+            lblLinha.BorderStyle = BorderStyle.Fixed3D;
+            lblLinha.Location = new Point(24, 96);
+            lblLinha.Name = "lblLinha";
+            lblLinha.Size = new Size(400, 1);
+            lblLinha.TabIndex = 14;
             // 
-            // label4
+            // lblLinha2
             // 
-            label4.BorderStyle = BorderStyle.Fixed3D;
-            label4.Location = new Point(24, 205);
-            label4.Name = "label4";
-            label4.Size = new Size(400, 1);
-            label4.TabIndex = 15;
+            lblLinha2.BorderStyle = BorderStyle.Fixed3D;
+            lblLinha2.Location = new Point(24, 205);
+            lblLinha2.Name = "lblLinha2";
+            lblLinha2.Size = new Size(400, 1);
+            lblLinha2.TabIndex = 15;
             // 
             // FormCadastroContato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(459, 365);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(lblLinha2);
+            Controls.Add(lblLinha);
             Controls.Add(label2);
             Controls.Add(btnSalvar);
             Controls.Add(btnVoltar);
@@ -245,6 +244,7 @@
             Controls.Add(txtNome);
             Controls.Add(lblNome);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "FormCadastroContato";
             Text = "FormCadastroContato";
@@ -273,7 +273,7 @@
         private Button btnVoltar;
         private Button btnSalvar;
         private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label lblLinha;
+        private Label lblLinha2;
     }
 }

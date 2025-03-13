@@ -32,9 +32,9 @@
             mnsCadastrar = new ToolStripMenuItem();
             mnsSobre = new ToolStripMenuItem();
             mnsSair = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
+            pcMenu = new PictureBox();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcMenu).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -42,7 +42,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { mnsCadastrar, mnsSobre, mnsSair });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(602, 24);
+            menuStrip1.Size = new Size(599, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,28 +66,34 @@
             mnsSair.Text = "Sair";
             mnsSair.Click += mnsSair_Click;
             // 
-            // pictureBox1
+            // pcMenu
             // 
-            pictureBox1.Image = Properties.Resources.istockphoto_1129473522_612x612;
-            pictureBox1.Location = new Point(0, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(602, 373);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pcMenu.Dock = DockStyle.Fill;
+            pcMenu.Image = Properties.Resources.istockphoto_1129473522_612x612;
+            pcMenu.Location = new Point(0, 24);
+            pcMenu.Name = "pcMenu";
+            pcMenu.Size = new Size(599, 341);
+            pcMenu.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcMenu.TabIndex = 1;
+            pcMenu.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(602, 450);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(599, 365);
+            Controls.Add(pcMenu);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcMenu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -98,6 +104,6 @@
         private ToolStripMenuItem mnsCadastrar;
         private ToolStripMenuItem mnsSobre;
         private ToolStripMenuItem mnsSair;
-        private PictureBox pictureBox1;
+        private PictureBox pcMenu;
     }
 }
