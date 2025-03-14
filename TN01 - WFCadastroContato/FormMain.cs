@@ -17,5 +17,16 @@ namespace TN01___WFCadastroContato
             FormCadastroContato form = new FormCadastroContato();
             form.ShowDialog();
         }
+
+        private void mnsListagem_Click(object sender, EventArgs e)
+        {
+            FormListagem form = new FormListagem();
+            form.ShowDialog();
+        }
+
+        private void mnsSobre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

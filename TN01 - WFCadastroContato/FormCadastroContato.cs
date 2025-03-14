@@ -20,10 +20,9 @@ namespace TN01___WFCadastroContato
         public void Sucesso(string mensagem = "")
         {
             MessageBox.Show(mensagem, "Sucesso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+                MessageBoxButtons.OK, MessageBoxIcon.Information);}
 
-        private void LimparFormulario()
+        public void LimparFormulario()
         {
             txtNome.Clear();
             txtSobrenome.Clear();
@@ -32,27 +31,25 @@ namespace TN01___WFCadastroContato
             rdbComercial.Checked = false;
             rdbRecado.Checked = false;
             txtEmail.Clear();
-   
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
+        }private void btnSalvar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
             string sobrenome = txtSobrenome.Text;
             string email = txtEmail.Text;
             string telefone = mkdTelefone.Text;
-            string tipotelefone = gbxTipoTelefone.Text;
+            ETipoTelefone tipotelefone;
+           
 
             if (nome.Length == 0)
             {
-                MessageBox.Show("O nome não foi informado!" , "Erro");
+                MessageBox.Show("O nome não foi informado!", "Erro");
                 return;
             }
-             if (sobrenome.Length == 0)
-             {
+            if (sobrenome.Length == 0)
+            {
                 MessageBox.Show("O sobrenome não foi informado!", "Erro");
                 return;
-             }
+            }
 
             if (email.Length == 0)
             {
@@ -68,31 +65,43 @@ namespace TN01___WFCadastroContato
 
             if (rdbPessoal.Checked)
             {
-               tipotelefone = "Pessoal";
+                tipotelefone = ETipoTelefone.Pessoal;
             }
             else if (rdbComercial.Checked)
             {
-                tipotelefone = "Comercial";
+                tipotelefone = ETipoTelefone.Comercial;
             }
             else if (rdbRecado.Checked)
             {
-                tipotelefone = "Recado";
+                tipotelefone = ETipoTelefone.Recado;
             }
             else
             {
-                MessageBox.Show("O tipo de telefone não foi informado","Erro");
+                MessageBox.Show("O tipo de telefone não foi informado", "Erro");
                 return;
             }
- 
-            string mensagem = $@"
-                Nome: {txtNome.Text} {txtSobrenome.Text}
-                Tipo Telefone: {tipotelefone}
-                DDD/Telefone: {telefone}
-                E-mail: {txtEmail.Text}    ";
 
-            Sucesso(mensagem);
 
-         
+            Contato c1 = new Contato();
+            c1.Nome = nome;
+            c1.Sobrenome = sobrenome;
+            c1.Email = email;
+            c1.Codigo = 0;
+            c1.TipoTelefone = tipotelefone;
+            c1.DDD = mkdTelefone.Text.Substring(1, 2);
+            c1.Telefone = mkdTelefone.Text.Substring(5);
+
+
+            Contato.ListaContatos.Add(c1);
+
+            Sucesso("Cadastrado com Sucesso");
+
+            LimparFormulario();
+        }
+       
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

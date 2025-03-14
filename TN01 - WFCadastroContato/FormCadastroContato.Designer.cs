@@ -186,6 +186,7 @@
             btnVoltar.Text = "Voltar";
             btnVoltar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // btnSalvar
             // 
