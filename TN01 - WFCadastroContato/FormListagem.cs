@@ -22,5 +22,6 @@ namespace TN01___WFCadastroContato
             dgvListaContatos.DataSource =
                 Contato.ListaContatos;
         }
+
     }
 }
