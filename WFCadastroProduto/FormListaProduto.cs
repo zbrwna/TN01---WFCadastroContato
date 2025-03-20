@@ -20,7 +20,7 @@ namespace WFCadastroProduto
         private void FormListaProduto_Load(object sender, EventArgs e)
         {
             dgvListaProdutos.DataSource =
-                 Produto.ListaProdutos;
+                 Produto.ObterLista();
         }
     }
 }

@@ -55,6 +55,7 @@
             // 
             // txtCodigo
             // 
+            txtCodigo.Enabled = false;
             txtCodigo.Location = new Point(12, 39);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(100, 23);
@@ -78,8 +79,9 @@
             // 
             // cbxCategoria
             // 
+            cbxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxCategoria.FormattingEnabled = true;
-            cbxCategoria.Items.AddRange(new object[] { "Perecível", "Não Perecível" });
+            cbxCategoria.Items.AddRange(new object[] { "Açougue", "", "Hortaliças", "", "Eletrônicos", "", "Limpeza", "", "Padaria", "", "Frios", "", "Laticínios", "", "Peixaria", "", "Cesta Básica" });
             cbxCategoria.Location = new Point(139, 39);
             cbxCategoria.Name = "cbxCategoria";
             cbxCategoria.Size = new Size(121, 23);
@@ -105,9 +107,11 @@
             // 
             // dtpDataVencimento
             // 
+            dtpDataVencimento.CalendarMonthBackground = SystemColors.Menu;
+            dtpDataVencimento.Format = DateTimePickerFormat.Short;
             dtpDataVencimento.Location = new Point(151, 155);
             dtpDataVencimento.Name = "dtpDataVencimento";
-            dtpDataVencimento.Size = new Size(162, 23);
+            dtpDataVencimento.Size = new Size(121, 23);
             dtpDataVencimento.TabIndex = 8;
             dtpDataVencimento.TabStop = false;
             dtpDataVencimento.Value = new DateTime(2025, 3, 18, 0, 0, 0, 0);
@@ -152,7 +156,9 @@
             // nupPreco
             // 
             nupPreco.DecimalPlaces = 2;
+            nupPreco.Increment = new decimal(new int[] { 50, 0, 0, 0 });
             nupPreco.Location = new Point(12, 155);
+            nupPreco.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             nupPreco.Name = "nupPreco";
             nupPreco.Size = new Size(120, 23);
             nupPreco.TabIndex = 13;
@@ -175,10 +181,13 @@
             Controls.Add(lblNomeProduto);
             Controls.Add(txtCodigo);
             Controls.Add(lblCodigo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastroProduto";
-            Text = "FormCadastroProduto";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadastro de Produto";
+            Load += FormCadastroProduto_Load;
             ((System.ComponentModel.ISupportInitialize)nupPreco).EndInit();
             ResumeLayout(false);
             PerformLayout();

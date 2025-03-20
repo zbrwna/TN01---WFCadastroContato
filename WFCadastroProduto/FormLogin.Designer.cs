@@ -40,7 +40,8 @@
             txtSenha.Location = new Point(25, 98);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(100, 23);
+            txtSenha.PlaceholderText = "Digite a sua senha..";
+            txtSenha.Size = new Size(113, 23);
             txtSenha.TabIndex = 2;
             // 
             // lblSenha
@@ -65,7 +66,8 @@
             // 
             txtLogin.Location = new Point(25, 42);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(100, 23);
+            txtLogin.PlaceholderText = "Digite o seu login..";
+            txtLogin.Size = new Size(113, 23);
             txtLogin.TabIndex = 1;
             // 
             // btnAcessar
@@ -88,7 +90,9 @@
             Controls.Add(lblLogin);
             Controls.Add(txtLogin);
             Controls.Add(btnAcessar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLogin";
             Load += FormLogin_Load;
             ResumeLayout(false);

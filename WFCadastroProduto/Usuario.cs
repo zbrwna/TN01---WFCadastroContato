@@ -11,9 +11,19 @@ namespace WFCadastroProduto
         public int Codigo { get; set; }
         public string? Login { get; set; }
         public string? Senha { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime? DataCadastro { get; set; }
 
         public static
             List<Usuario> ListaUsuarios = new List<Usuario>();
+
+        public void Cadastrar()
+        {
+            ListaUsuarios.Add(this);
+        }
+
+        public static List<Usuario> TodosOsUsuarios()
+        {
+            return ListaUsuarios;
+        }
     }
 }
